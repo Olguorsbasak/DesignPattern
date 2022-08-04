@@ -1,0 +1,37 @@
+Ana nesnemizi oluşturmayı sağlayan nesneler birden fazla sayıda 
+olabilirler ama tek bir üst sınıftan türerler. Bu desende bu nesnelerin
+oluşturulmasının sorumluluğu Builder sınıfın-dadır. Oluşturulması 
+istenen nesne composit bir nesne olmalıdır. Kullanılırken arkadaki 
+nesneyi oluşturan detaylarla ilgilenmek zorunluluğunu ortadan kaldırır,
+sadece ana nes-neye odaklanırız. Ön taraftaki yazılımcı bu
+nesneyi kullanırken verdiği parametreye göre eline bu kurucu 
+sınıfı alır ve bu sınıf vasıtasıyla istediği nesneyi oluşturabilir.
+Bu tasarım deseni creational gruptan olduğu için nesneyi oluşturma 
+sorumluluğu direkt desene aittir. Sistemde ana kurucu nesnenin altına 
+er de gelebileceği için sistem ra-hatlıkla genişleyebilir. 
+Nesnenin oluşturulmasına ilişkin detayları sadece bu nesneler bilebilir.
+Bu deseni yuvarlandıkça büyüyen bir kartopu olarak da düşünebiliriz.
+Oluşturulması istenen nesneyi adım adım oluşturur ve en son nesnenin
+son halini bize verir.
+Builder tasarım kalıbı kompleks bir nesneyi adım adım oluşturmak istediğimiz
+zaman kullandığımız bir tekniktir. Eğer nesne birden fazla parçadan
+oluşuyorsa bu tasarım desenini kullanarak nesneden bir örnek 
+oluşturabiliriz. Abstract factory desenine benzemekle birlikte bu 
+desen tek bir ürünü oluşturmaya yönelikken abstract factory belli 
+bir ürün ailesini oluşturmayı hedefler. Oluşturulması hedeflenen 
+nesne birden fazla parçadan (nes-neden) oluştuğu için nesneyi 
+oluşturan parçalar yeni istekler geldikçe değişebilir ve artık 
+ana nesnemizi oluşturmak çok karmaşık bir hale gelebilir. 
+İşte builder tasarım deseni buna benzer karmaşıklıkları engellemek, 
+genişleyebilirliği sağlamak için kullanılır. Eğer bir sınıfı 
+oluşturduğumuzda yapıcı sayımız fazlaysa bu deseni kullanmak için 
+sinyali aldık demektir. Yapıcı sayısının fazla olması 
+telescopingdenilen bir anti-pattern’i işaret eder. 
+Fazla sayıda olan yapıcılar kod tekrarı yaptırdığı gibi 
+sırası da akılda kalıcı olmadığından tercih edilmez. 
+Eğer gerçek bir tipi yükleme sırasında sarmalayamıyorsanız
+abstract factory deseni-ni kullanmak Dependency injection
+için de varsayılan çözümdür. Önceki konularımızda gördüğümüz 
+encapsulation’ı hatırlayın. Eğer bir nesnenin oluşturulmasını 
+encapsüleet-mek istersek kullanabiliriz. 
+Yani dışarıdan gizlemek için de builder pattern’i kullanılabilir.

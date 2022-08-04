@@ -1,0 +1,28 @@
+Prototip, 
+
+kodunuzu değişik kaynaklara bağımlı hale getirmeden mevcut 
+nesneleri kopyalamanıza izin veren yaratıcı bir tasarım kalıbıdır.
+Diyelim ki bir nesneniz var ve onun tam bir kopyasını oluşturmak 
+istiyorsunuz, yapmanız gereken tüm sınıflarda çok benzerdir. 
+Klonlanacak sınıftan bir nesne oluşturur ve eski nesnenin tüm alan 
+değerlerini yenisine taşırsınız. Özel alanları bile kopyalayabilirsiniz 
+çünkü çoğu programlama dili, nesnelerin aynı sınıfa ait diğer nesnelerin
+özel alanlarına erişmesine izin verir.
+Klonlamayı destekleyen bir nesneye prototip denir. 
+Nesneleriniz düzinelerce alana ve yüzlerce olası konfigürasyona
+sahip olduğunda, onları klonlamak alt sınıflamaya bir alternatif 
+olarak hizmet edebilir.
+
+Avantajları;
+**Nesneleri, somut sınıflarına bağlamadan klonlayabilirsiniz.
+**Önceden oluşturulmuş prototipleri klonlamak için tekrarlanan
+başlatma kodundan kurtulabilirsiniz.
+**Karmaşık nesneleri daha rahat üretebilirsiniz.
+
+Yaptığımız projemizde nesnemizi birden fazla oluşturmamız gerektiğinde
+normalde “new” olarak oluşturmak yerine bir tane oluşturduğumuz 
+nesnemizin klonunu oluşturmamızı sağlayan bir design patterndir.
+
+Prototype Pattern kullanılmasının amacı üretilen nesnenin çok 
+kaynak tüketmesi durumunun engellenmesini sağlamaktır.
+

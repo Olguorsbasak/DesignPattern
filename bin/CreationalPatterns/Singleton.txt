@@ -1,0 +1,25 @@
+Singleton design pattern, creational design pattern kategorisindedir.
+Bu tasarım örüntüsündeki amaç, bir class’tan sadece bir instance yaratılmasını sağlar. Yani herhangi bir class’tan bir instance yaratılmak istendiğinde, eğer daha önce yaratılmış bir instance yoksa yeni yaratılır. Daha önce yaratılmış ise var olan instance kullanılır.
+En yaygın singleton tasarım örüntüsü örneklerinden biri Logger’dır. Bir başka örnek verecek olursak DataSource güzel bir örnektir.
+
+Constructor private olmalı. Bu yapılan işlem new ile nesne oluşturulmasını engeller.
+Class ile aynı türde static bir member oluşturulur. 
+Örneğin;
+class SingletonExample {
+private static SingletonExample instance;
+}
+Static member’a ulaşmak için static bir metot oluşturulmalıdır. 
+Örneğin;
+public static Singleton getInstance() { … return instance; }
+
+Singleton (Tek Nesne) tasarım kalıbı, bir sınıfın tek bir örneğini oluşturmak için kul-lanılır. Amaç, oluşturulan nesneye global 
+erişim noktası sağlamaktır. Oluşturulan tek örnek, tüm isteklere kendi üzerinden cevap verir. Sistem çalıştığı sürece ikinci bir örnek oluşturulamaz. 
+Sınıf örneği new operatörü ile alınamaz. Geliştirilen teknik ile sınıf ilk çağrıldığı anda statik örnek oluşturulur ve bundan sonraki çağırımlarda
+ tüm istemcilere aynı örnek gönderilir. Burada dikkat edilmesi gereken nokta, çok istemcili sistemlerde ilk örnek oluşturulurken güvenli örneklenme
+ yapılması ve oluşturulacak objenin kilitlenmesidir.
+ 
+Ne zaman kullanılır?
+Singleton tasarım kalıbını, sistem üzerinde tek bir nesne oluşturmak istediğimizde kullanırız demiştik. Connection (bağlantı) gibi her istek başına yeniden açılan ve sis-tem kaynağı tüketen sınıflarda istek başına örnek açmaktansa tek örnek üzerinden bağlantıyı kontrol etmek istediğimizde kullanılabilir. Bunun için statik sınıf veya me-todlar da kullanabilirsiniz ancak bu tarz bir kullanımda sınıfınız nesne temelli yakla-şımlara tamamen kapanmış olur. Örneğin, türetme gibi bir işlem yapamazsınız.
+Herhangi bir sınıf üzerinden alt sistemlere, modüllere ulaşmak istediğimizde de kul-lanırız. Alt sistem ve modüllere ulaşırken bir başka tasarım kalıbı olan facade’ı kulla-nırız. Bunun gibi kalıplar bir araya gelerek daha efektifolarak kullanılabilir.
+
+Gerçek hayatta projelerinizi geliştirirken Config, Connectiongibi her istemci için yeni bir örnek oluşturan yerlerde ve Utility, Helpergibi yardımcı fonksiyonları ça-ğırdığımız kısımlarda bu tasarım kalıbını kullanabiliriz. Hem okunabilirliği, hem de performans olarak bize katkıyı sağlayacaktır. Çünkü, sitenize giren her istemci için yeni bir connection nesnesi açmaktansa bu kalıp ile tek bir örnek üzerinden daha az sistem kaynağı tüketerek aynı işlemi yaptırabilirsiniz

@@ -1,0 +1,24 @@
+Factory (Fabrika) tasarım deseni sınıf yaratma üzerine kurulu bir yapıdır.
+Yazdığınız program da birbirine benzeyen birden fazla sınıf olabilir.
+ Bu tür sınıfları oluştururken her seferinde new operatörünü kullanmayın 
+ ya da o sınıflardan sanki birbirinden bağımsızmış gibi kod yazmayalım
+  diye böyle bir örüntü tasarlamışlar. Bu yüzden de rol model olarak bir 
+  nesne üretimi olduğu için factory adı verilmiştir. 
+  
+Factory (Fabrika) tasarım kalıbı, istemci tarafından verilen bilgilere göre
+ nesne olu-şumunu soyutlayarak merkezi bir yerden kontrol etmemizi sağlar.
+  Sınıflar, arayüz üzerinden türetilir. Böylece, istemci ile işi yapacak 
+  olan nesne birbirinden ayrılarak gevşek bağlılık sağlanmış olur. 
+  Oluşturulacak nesnelerden birbirine benzer olanlar aynı arayüzden 
+  türetilerek gruplanır. Fabrika deseni, aynı zamanda sistemimizde 
+  tanımladığımız soyut sınıflardan örnekler oluşturmamızı sağlar.
+Kullanım şekli olarak, istemcinin verdiği bilgiye göre çalışma zamanında 
+işi yapacak nesneyi oluşturur. Geri dönüş tipi tanımladığımız
+ arayüzümüzdür. Geri döndürdüğü nesneler bu arayüzden türemiş 
+ olmalıdırlar. Gerçek hayata benzetecek olursak; bir fabrikamız vardır 
+ ve bu fabrikadan belli başlı özellikte ürünler üretilir.
+ Ürünlerimiz arayüzümüzden türemiş alt sınıflar, ortak özellikler ise 
+ tanımladığımız arayüzümüz-dür. Fabrika kullanımının farklı bir yöntemi
+ daha vardır. Daha az kullanılmakla bir-likte bu yöntem temel olarak 
+ her nesne üretimi için arayüzümüzü kullanan bir oluş-turucu sınıf 
+kullanmaktır

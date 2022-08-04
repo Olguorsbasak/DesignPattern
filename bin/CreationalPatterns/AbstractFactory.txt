@@ -1,0 +1,32 @@
+Abstract Factory 
+
+ürün ailesinin her sınıfından nesne oluşturmak için 
+arayüz sağlar. Kodunuz bu arayüz üzerinden nesne oluşturduğu sürece, 
+uygulamanız tarafından önceden oluşturulmuş ürünlerle eşleşmeyen 
+bir ürünün yanlış versiyonu oluşturulmaz.
+Client , factoryden bir ürün ister.
+Ürünün hangi çeşidi döndürülürse döndürülsün, her zaman aynı 
+fabrika nesnesi tarafından üretilen türüyle eşleşir.
+
+Avantajları
+**Fabrikadan aldığımız ürünlerin birbirleriyle uyumlu olduğundan 
+emin olabiliriz.
+**Open/Closed Principle : Mevcut client kodunu bozmadan yeni 
+ürün versiyonları üretebiliriz.
+**Single Responsibility Principle : Ürün oluşturma kodunu 
+tek bir yerde yaparak kodun daha kolay beslenmesini sağlayabiliriz .
+**Dependency Injection (DI) için temel bir tasarım modelidir.
+
+Factory design pattern’de tek bir ürün ailesine ait tek bir arayüz
+mevcutken,abstract factory’de farklı ürün aileleri için farklı 
+arayüzler mevcuttur.
+Fabrika olarak düşünürsek, Factory DP sadece tek bir ürünün üretildiği 
+fabrika, Abstract Factory DP ise farklı farklı ürünlerin üretildiği 
+fabrika olarak düşünebiliriz.
+
+Abstract Factory Ne Zaman Kullanılır?
+Birden fazla ürün ailesi ile çalışmak durumunda kaldığımızda , 
+ürün ailesi ile istemci tarafını soyutlamak için kullanılır.
+Ürün ailelerinin oluşumunu istemci tarafından ayırarak, 
+karar verme koşulu olmadan, esnek ve geliştirilebilir bir yapı 
+kurmamızı sağlar.
